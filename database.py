@@ -10,5 +10,5 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 Base = declarative_base()
 
 def init_db():
-    import models
+    from app import models
     Base.metadata.create_all(bind=engine)
