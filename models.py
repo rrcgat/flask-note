@@ -2,6 +2,7 @@ from sqlalchemy import Column, DateTime, String, Text
 from database import Base
 
 class Notebooks(Base):
+    __tablename__ = 'Notebooks'
     ts = Column(String(13), primary_key=True)
     bookname = Column(String(20))
 
@@ -14,6 +15,7 @@ class Notebooks(Base):
 
 
 class NoteInfo(Base):
+    __tablename__ = 'NoteInfo'
     ts = Column(DateTime, primary_key=True)
     bookid = Column(String(13))
     note = Column(Text)
