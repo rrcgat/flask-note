@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>最近记录</title>
+    </head>
+    <body>
+    {% for item in notebooks %}  
+        <ul>  
+            <li>{{item.note}}</li>
+        </ul>  
+    {% endfor %}  
+    </body>
+</html>

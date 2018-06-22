@@ -1,6 +1,6 @@
 import json
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 from database import db_session, engine
 from models import NoteInfo, Notebooks
@@ -10,7 +10,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'This is mini note app'
+    notebooks = NoteInfo.query.all()[:10]
+    return render_template('index.html', notebooks=notebooks)
 
 @app.route('/u', methods=['POST'])
 def upload():
